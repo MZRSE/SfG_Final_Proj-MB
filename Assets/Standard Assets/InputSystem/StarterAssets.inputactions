@@ -44,7 +44,7 @@
                 {
                     "name": "Shoot",
                     "type": "Button",
-                    "id": "7c1a60fb-1c31-47a7-a42c-837b5d3ab76c",
+                    "id": "59d730ea-8da2-4acb-a97d-af03b8fcd2a5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -53,7 +53,7 @@
                 {
                     "name": "Switch Weapon",
                     "type": "Value",
-                    "id": "fc08c70f-f86c-487e-9067-c70a1feefb70",
+                    "id": "55363406-851e-4cfd-84fb-d25a1bf3a13f",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
@@ -239,18 +239,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b0ad2db0-c28c-4d5e-a85b-2f6768ca9871",
-                    "path": "<Keyboard>/#(E)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b806053b-3c44-4b46-b73e-86c95d800f2e",
+                    "id": "587dc858-80cb-41e3-a877-a5979adb9d7b",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
@@ -261,7 +250,18 @@
                 },
                 {
                     "name": "",
-                    "id": "32014e6e-bf97-4c4e-bd2d-351e917071ad",
+                    "id": "13c663cc-01aa-44f7-824e-92eed9bc369d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6108dc03-e5e2-4f29-b84b-14ff3d57f082",
                     "path": "<Mouse>/scroll/y",
                     "interactions": "",
                     "processors": "",

@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aef05cd3398a884ba72af3b9c9dc0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchWeapon: {fileID: 2046555303259791406, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+  _switchWeapon: {fileID: 4036737486976501432, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
   activeWeapon: 0
 --- !u!1 &988964358
@@ -1888,7 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bee5889b618584a9ce88e3602f9f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _streamOnShoot: {fileID: -2541777886632381235, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+  _streamOnShoot: {fileID: -46671534250410370, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
   _particleLauncher: {fileID: 1109938542}
   _splatterParticle: {fileID: 777562519}
@@ -6851,7 +6851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bee5889b618584a9ce88e3602f9f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _streamOnShoot: {fileID: -2541777886632381235, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+  _streamOnShoot: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018,
     type: 3}
   _particleLauncher: {fileID: 1109938542}
   _splatterParticle: {fileID: 777562519}
