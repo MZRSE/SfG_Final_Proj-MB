@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class SwitchWeapons : MonoBehaviour
 {
-    [SerializeField] private InputActionReference _switchWeapon;
+    public Vector2 _switchWeapon = Input.mouseScrollDelta;
     [SerializeField] public int activeWeapon = 0;
 
     void Start()
@@ -17,7 +17,7 @@ public class SwitchWeapons : MonoBehaviour
     void Update()
     {
         int previousSelectedWeapon = activeWeapon;
-        var scrollAxis = _switchWeapon.action.ReadValue<float>();
+        var scrollAxis = _switchWeapon.y;
 
         if (scrollAxis > 0f)
         {

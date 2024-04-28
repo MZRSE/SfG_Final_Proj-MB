@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
-#if ENABLE_INPUT_SYSTEM
-using UnityEngine.InputSystem;
-#endif
+//#if ENABLE_INPUT_SYSTEM
+//using UnityEngine.InputSystem;
+//#endif
 
 namespace StarterAssets
 {
 	[RequireComponent(typeof(CharacterController))]
-#if ENABLE_INPUT_SYSTEM
-	[RequireComponent(typeof(PlayerInput))]
-#endif
+//#if ENABLE_INPUT_SYSTEM
+	//[RequireComponent(typeof(PlayerInput))]
+//#endif
 	public class FirstPersonController : MonoBehaviour
 	{
 		[Header("Player")]
@@ -65,26 +65,26 @@ namespace StarterAssets
 		private float _fallTimeoutDelta;
 
 	
-#if ENABLE_INPUT_SYSTEM
-		private PlayerInput _playerInput;
-#endif
+//#if ENABLE_INPUT_SYSTEM
+//		private PlayerInput _playerInput;
+//#endif
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
 
-		private bool IsCurrentDeviceMouse
-		{
-			get
-			{
-				#if ENABLE_INPUT_SYSTEM
-				return _playerInput.currentControlScheme == "KeyboardMouse";
-				#else
-				return false;
-				#endif
-			}
-		}
+//		private bool IsCurrentDeviceMouse
+//		{
+//			get
+//			{
+//				#if ENABLE_INPUT_SYSTEM
+//				return _playerInput.currentControlScheme == "KeyboardMouse";
+//				#else
+//				return false;
+//				#endif
+//			}
+//		}
 
 		private void Awake()
 		{
@@ -99,11 +99,11 @@ namespace StarterAssets
 		{
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
-#if ENABLE_INPUT_SYSTEM
-			_playerInput = GetComponent<PlayerInput>();
-#else
-			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
-#endif
+///#if ENABLE_INPUT_SYSTEM
+//			_playerInput = GetComponent<PlayerInput>();
+//#else
+//			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
+//#endif
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
@@ -135,10 +135,10 @@ namespace StarterAssets
 			if (_input.look.sqrMagnitude >= _threshold)
 			{
 				//Don't multiply mouse input by Time.deltaTime
-				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+//				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+//				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
+//				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
 				// clamp our pitch rotation
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);

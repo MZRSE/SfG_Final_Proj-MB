@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
-public class PaintballGun : MonoBehaviour
+/*public class PaintballGun : MonoBehaviour
 {
     [SerializeField] private InputActionReference _launcherOnShoot;
 
@@ -23,7 +23,7 @@ public class PaintballGun : MonoBehaviour
     {
         _launcherOnShoot.action.performed -= PaintballShoot;
         _launcherOnShoot.action.Disable();
-    }
+    } 
 
     public void PaintballShoot(InputAction.CallbackContext txt)
     {
@@ -48,4 +48,4 @@ public class PaintballGun : MonoBehaviour
             }
         }
     }
-}
+} */

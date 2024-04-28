@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 using TMPro;
 
 public class Level01Controller : MonoBehaviour
@@ -17,16 +17,15 @@ public class Level01Controller : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.qKey.wasPressedThisFrame)
+        if (Input.GetKey("q"))
         {
             IncreaseScore(5);
         }
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Input.GetKey("escape"))
         {
             ExitLevel();
         }
-;
     }
 
     public void IncreaseScore(int scoreIncrease)

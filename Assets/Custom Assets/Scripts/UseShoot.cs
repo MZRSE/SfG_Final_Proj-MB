@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class UseShoot : MonoBehaviour
 {
-    [SerializeField] private PaintballGun _weapon1;
+    //[SerializeField] private PaintballGun _weapon1;
     //[SerializeField] private ColorStreamGun _weapon2;
     //[SerializeField] private SprayCan _weapon3;
 
@@ -14,9 +14,9 @@ public class UseShoot : MonoBehaviour
         //PaintballGun shootableObject = _weapon1.GetComponent<PaintballGun>();
     //}
 
-    public void OnShoot(InputValue value)
+    public void OnShoot()
     {
-        if (value.isPressed)
+        if (Input.GetKey("up"))
         {
             //if paintball gun is active
             //_weapon1.PaintballShoot();

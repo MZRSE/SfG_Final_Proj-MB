@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class ColorStreamGun : MonoBehaviour
 {
-    [SerializeField] private InputActionReference _streamOnShoot;
+//    [SerializeField] private InputActionReference _streamOnShoot;
     [SerializeField] public ParticleSystem _particleLauncher;
     [SerializeField] public ParticleSystem _splatterParticle;
 
@@ -17,7 +17,7 @@ public class ColorStreamGun : MonoBehaviour
         _collisionEvents = new List<ParticleCollisionEvent>();
     }
 
-    private void OnEnable()
+ /*   private void OnEnable()
     {
         _streamOnShoot.action.Enable();
     }
@@ -25,7 +25,7 @@ public class ColorStreamGun : MonoBehaviour
     private void OnDisable()
     {
         _streamOnShoot.action.Disable();
-    }
+    } */
 
     private void OnParticleCollision(GameObject other)
     {
@@ -47,7 +47,7 @@ public class ColorStreamGun : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_streamOnShoot.action.IsPressed())
+        if (Input.GetKey("mouse 0"))
         {
             ParticleSystem.MainModule psMain = _particleLauncher.main;
             psMain.startColor = _particleColorGradient.Evaluate(Random.Range(0f, 1f));

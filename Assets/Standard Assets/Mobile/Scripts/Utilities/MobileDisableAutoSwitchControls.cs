@@ -5,7 +5,7 @@ When built to a mobile phone; in most cases, there is no concept of switching co
 In Input System 1.0.2, if the PlayerInput component has Auto Switch enabled, it will search the mobile device for connected devices; which is very costly and results in bad performance.
 This is fixed in Input System 1.1.
 For the time-being; this script will disable a PlayerInput's auto switch control schemes; when project is built to mobile.
-*/
+
 
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
@@ -32,4 +32,4 @@ public class MobileDisableAutoSwitchControls : MonoBehaviour
 
 #endif
     
-}
+}*/
