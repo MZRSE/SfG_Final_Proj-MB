@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ColorStreamGun : MonoBehaviour
 {
-//    [SerializeField] private InputActionReference _streamOnShoot;
     [SerializeField] public ParticleSystem _particleLauncher;
     [SerializeField] public ParticleSystem _splatterParticle;
 
@@ -16,16 +15,6 @@ public class ColorStreamGun : MonoBehaviour
     {
         _collisionEvents = new List<ParticleCollisionEvent>();
     }
-
- /*   private void OnEnable()
-    {
-        _streamOnShoot.action.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _streamOnShoot.action.Disable();
-    } */
 
     private void OnParticleCollision(GameObject other)
     {
