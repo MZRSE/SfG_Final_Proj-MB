@@ -7,8 +7,8 @@ public class ColorStreamGun : MonoBehaviour
 {
     [SerializeField] public ParticleSystem _particleLauncher;
     [SerializeField] public ParticleSystem _splatterParticle;
-
     public Gradient _particleColorGradient;
+    public ParticleDecalPool _splatDecalPool;
     List<ParticleCollisionEvent> _collisionEvents;
 
     private void Start()
@@ -21,6 +21,7 @@ public class ColorStreamGun : MonoBehaviour
         ParticlePhysicsExtensions.GetCollisionEvents(_particleLauncher, other, _collisionEvents);
         for (int i = 0; i < _collisionEvents.Count; i++)
         {
+            _splatDecalPool.ParticleHit(_collisionEvents[i], _particleColorGradient); 
             EmitAtLocation(_collisionEvents[i]);
         }
     }

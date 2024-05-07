@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CollisionSplatter : MonoBehaviour {
 
-	public ParticleSystem particleLauncher;
-	public Gradient particleColorGradient;
-	//public ParticleDecalPool dropletDecalPool;
+	public ParticleSystem _particleLauncher;
+	public Gradient _particleColorGradient;
+	public ParticleDecalPool _dropletDecalPool;
 
 	List<ParticleCollisionEvent> _collisionEvents;
 
@@ -18,12 +18,12 @@ public class CollisionSplatter : MonoBehaviour {
 
 	void OnParticleCollision(GameObject other)
 	{
-		int numCollisionEvents = ParticlePhysicsExtensions.GetCollisionEvents (particleLauncher, other, _collisionEvents);
+		int numCollisionEvents = ParticlePhysicsExtensions.GetCollisionEvents (_particleLauncher, other, _collisionEvents);
 
 		int i = 0;
 		while (i < numCollisionEvents) 
 		{
-            //	dropletDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);
+            _dropletDecalPool.ParticleHit(_collisionEvents[i], _particleColorGradient);
             i++;
 		}
 
