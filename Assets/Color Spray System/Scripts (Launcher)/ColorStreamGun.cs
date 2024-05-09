@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.InputSystem;
 
 public class ColorStreamGun : MonoBehaviour
 {
@@ -30,7 +29,7 @@ public class ColorStreamGun : MonoBehaviour
     void EmitAtLocation(ParticleCollisionEvent particleCollisionEvent)
     {
         _splatterParticle.transform.position = particleCollisionEvent.intersection;
-        _splatterParticle.transform.rotation = Quaternion.LookRotation(particleCollisionEvent.normal); //splatter rotation, huh... keep this in mind
+        _splatterParticle.transform.rotation = Quaternion.LookRotation(particleCollisionEvent.normal); 
         ParticleSystem.MainModule psMain = _splatterParticle.main;
         psMain.startColor = _particleColorGradient.Evaluate(Random.Range(0f, 1f));
         _splatterParticle.Emit(1);
