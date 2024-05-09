@@ -24,13 +24,13 @@ public class ParticleDecalPool : MonoBehaviour
         }
     }
 
-    public void ParticleHit(ParticleCollisionEvent _particleCollisionEvent, Gradient _colorGradient)
+    public void ParticleHit(ParticleCollisionEvent _particleCollisionEvent/*, Gradient _colorGradient*/)
     {
-        SetParticleData(_particleCollisionEvent, _colorGradient);
+        SetParticleData(_particleCollisionEvent/*, _colorGradient*/);
         DisplayParticles();
     }
 
-    void SetParticleData(ParticleCollisionEvent _particleCollisionEvent, Gradient _colorGradient)
+    void SetParticleData(ParticleCollisionEvent _particleCollisionEvent/*, Gradient _colorGradient*/)
     {
         if (_particleDataIndex >= _maxDecals)
         {
@@ -41,7 +41,7 @@ public class ParticleDecalPool : MonoBehaviour
         _particleRotEuler.z = Random.Range(0, 360);
         _particleData[_particleDataIndex]._rotation = _particleRotEuler;
         _particleData[_particleDataIndex]._size = Random.Range(_decalSizeMin, _decalSizeMax);
-        _particleData[_particleDataIndex]._color = _colorGradient.Evaluate(Random.Range(0f, 1f));
+        //_particleData[_particleDataIndex]._color = _colorGradient.Evaluate(Random.Range(0f, 1f));
 
         _particleDataIndex++;
     }
@@ -53,7 +53,7 @@ public class ParticleDecalPool : MonoBehaviour
             _particles[i].position = _particleData[i]._position;
             _particles[i].rotation3D = _particleData[i]._rotation;
             _particles[i].startSize = _particleData[i]._size;
-            _particles[i].startColor = _particleData[i]._color;
+            //_particles[i].startColor = _particleData[i]._color;
         }
 
         _decalParticleSystem.SetParticles(_particles, _particles.Length);

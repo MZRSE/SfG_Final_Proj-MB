@@ -23,7 +23,7 @@ public class CollisionSplatter : MonoBehaviour {
 		int i = 0;
 		while (i < numCollisionEvents) 
 		{
-            _dropletDecalPool.ParticleHit(_collisionEvents[i], _particleColorGradient);
+            _dropletDecalPool.ParticleHit(_collisionEvents[i]/*, _particleColorGradient*/);
             i++;
 		}
 
