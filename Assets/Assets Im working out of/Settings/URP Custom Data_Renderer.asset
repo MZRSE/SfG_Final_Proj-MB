@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   _passTag: RenderLiquidScreenSpace
-  _event: 300
+  _event: 500
   _FS:
     RenderQueueType: 1
     LayerMask:
@@ -24,7 +24,7 @@ MonoBehaviour:
   BlitMaterial: {fileID: 2100000, guid: 2ef29809eae773c4a8b946b23137ebd1, type: 2}
   _writeDepthMaterial: {fileID: 2100000, guid: 982a60f0c45b9b341b2c121a640d2adb, type: 2}
   _blurPasses: 3
-  _blurDistance: 0.54
+  _blurDistance: 0.671
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

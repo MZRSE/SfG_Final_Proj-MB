@@ -6,8 +6,9 @@ using UnityEngine;
 public class ColorStreamGun : MonoBehaviour
 {
     [SerializeField] public ParticleSystem _particleLauncher;
+    [SerializeField] public ParticleSystem _nozzleParticle;
     [SerializeField] public ParticleSystem _splatterParticle;
-    //public Gradient _particleColorGradient;
+    public Gradient _particleColorGradient;
     public ParticleDecalPool _splatDecalPool;
     List<ParticleCollisionEvent> _collisionEvents;
     
@@ -21,7 +22,7 @@ public class ColorStreamGun : MonoBehaviour
         ParticlePhysicsExtensions.GetCollisionEvents(_particleLauncher, other, _collisionEvents);
         for (int i = 0; i < _collisionEvents.Count; i++)
         {
-            _splatDecalPool.ParticleHit(_collisionEvents[i]/*, _particleColorGradient*/); 
+            _splatDecalPool.ParticleHit(_collisionEvents[i], _particleColorGradient); 
             EmitAtLocation(_collisionEvents[i]);
         }
     }
@@ -31,7 +32,7 @@ public class ColorStreamGun : MonoBehaviour
         _splatterParticle.transform.position = particleCollisionEvent.intersection;
         _splatterParticle.transform.rotation = Quaternion.LookRotation(particleCollisionEvent.normal); //splatter rotation, huh... keep this in mind
         ParticleSystem.MainModule psMain = _splatterParticle.main;
-        //psMain.startColor = _particleColorGradient.Evaluate(Random.Range(0f, 1f));
+        psMain.startColor = _particleColorGradient.Evaluate(Random.Range(0f, 1f));
         _splatterParticle.Emit(1);
     }
 
@@ -42,6 +43,7 @@ public class ColorStreamGun : MonoBehaviour
             ParticleSystem.MainModule psMain = _particleLauncher.main;
             //psMain.startColor = _particleColorGradient.Evaluate(Random.Range(0f, 1f));
             _particleLauncher.Emit(1);
+            _nozzleParticle.Emit(1);
         }
     }
 }
