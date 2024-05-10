@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorStreamGun : MonoBehaviour
+public class ColorStream : MonoBehaviour
 {
     [SerializeField] public ParticleSystem _particleLauncher;
     [SerializeField] public ParticleSystem _nozzleParticle;
